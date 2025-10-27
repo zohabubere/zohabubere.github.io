@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu</title>
+    <link rel="icon" type="image/x-icon" href="https://share1.cloudhq-mkt3.net/184f05c3d2b4c7.png">
+  
+    <style>
+      body {
+        background-color: #341C02;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #ffffe7;
+      }
+      
+      /* Header */
+      header {
+        background-color: #553c2c;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+        
+      .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://share1.cloudhq-mkt3.net/d15aefb9373be4.jpeg');
+        background-size: cover;
+        background-position: center;
+        color: #FFFFE7;
+        text-align: center;
+        padding: 8rem 0;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+      
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: #553c2c;
+        padding: 16px;
+      }
+      
+      nav a {
+        font-family: Arial;
+        margin: 0 20px;
+        color: #ffffe7;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      nav a:hover {
+        font-family: Arial;
+        text-decoration: underline;
+      }
+      
+      h1 {
+        text-align: center;
+        font-family: Cambria;
+        font-size: 25px;
+        color: #ffffe7;
+      }
+      
+      h2 {
+        color: #ffffe7;
+        padding: 3px;
+        border-radius: 4px;
+        font-family: Cambria;
+        font-size: 22px;
+        text-align: center;
+      }
+      
+      h3 {
+        font-family: Arial;
+        color: #ffffe7;
+        text-align: left;
+      }
+      
+      p {
+        font-family: Arial;
+        text-align: center;
+        border: 5px;
+        font-size: 15px;
+        color: #ffffe7;
+        margin-left: 60px;
+        margin-right: 60px;
+        line-height: 1.5;
+      }
+      
+      ul {
+        font-family: Arial;
+        color: #ffffe7;
+      }
+      
+      footer {
+        font-family: Arial;
+        background-color: #553c2c;
+        color: #ffffe7;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      /* Menu Sections */
+      .menu-section {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+      
+      .section-title {
+        text-align: center;
+        font-family: Cambria;
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #ffffe7;
+        position: relative;
+      }
+      
+      .section-title:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 2px;
+        background: #ffffe7;
+        margin: 10px auto;
+      }
+      
+      /* Product Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .product-card {
+        background-color: #553c2c;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .product-info {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .product-name {
+        font-family: Cambria;
+        font-size: 20px;
+        margin: 10px 0;
+        text-align: center;
+      }
+      
+      .product-price {
+        font-family: Arial;
+        font-size: 16px;
+        text-align: center;
+        color: #e6d3b6;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .hero h2 {
+          font-size: 2.2rem;
+        }
+            
+        .main-container {
+          flex-direction: column;
+        }
+            
+        aside {
+          order: -1;
+        }
+      }
+        
+      @media (max-width: 768px) {
+        .header-container {
+          flex-wrap: wrap;
+        }
+            
+        .mobile-menu-btn {
+          display: block;
+        }
+            
+        .hero {
+          padding: 3rem 0;
+        }
+            
+        .hero h2 {
+          font-size: 1.8rem;
+        }
+            
+        .hero p {
+          font-size: 1rem;
+        }
+        
+        .main-container {
+          padding: 1rem;
+        }
+      }
+        
+      @media (max-width: 480px) {
+        .logo h1 {
+          font-size: 1.5rem;
+        }
+            
+        .hero h2 {
+          font-size: 1.5rem;
+        }
+            
+        section, aside {
+          padding: 1.5rem 1rem;
+        }
+            
+        .offers {
+          grid-template-columns: 1fr;
+        }
+            
+        .menu-table {
+          font-size: 0.9rem;
+        }
+            
+        .menu-table th, .menu-table td {
+          padding: 8px 10px;
+        }
+        
+        p {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        
+        .products-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!--Header-->
+    <header>
+      <div class="header-container">
+        <h1>Zoha's Cafe</h1>
+      </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h2>Menu</h2>
+      </div>
+    </section>
+    
+    <!--Navigation-->
+    <nav>
+      <a href="https://drive.google.com/uc?id=1MPemjtJWPJnY0Kx6AVSayLZWFF1PEYFP&amp;export=download">Home</a> 
+      <a href="https://drive.google.com/uc?id=1CpY8tjr0jMo9_f3cmV7DcmmAFX7LccD9&amp;export=download">Menu</a> 
+      <a href="https://drive.google.com/uc?id=1qPjzvVGDPZ1XFwjGATvBCIKaxTUJg9Ri&amp;export=download">Contact</a>
+    </nav>
+    
+    <!-- Menu Content -->
+    <div class="menu-content">
+      <!-- Hot Drinks Section -->
+      <section class="menu-section">
+        <h2 class="section-title">Hot Drinks</h2>
+        <div class="products-grid">
+          <!-- Espresso -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/213e22a15d042e.jpeg" alt="Espresso" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Espresso</h3>
+              <p class="product-price">$3.50</p>
+            </div>
+          </div>
+          
+          <!-- Cappuccino -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/ef44f04422c746.jpeg" alt="Cappuccino" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Cappuccino</h3>
+              <p class="product-price">$4.50</p>
+            </div>
+          </div>
+          
+          <!-- Mocha -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/cb92bdfc6c98b1.jpeg" alt="Mocha" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Mocha</h3>
+              <p class="product-price">$5.00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Iced Drinks Section -->
+      
+      <section class="menu-section">
+        <h2 class="section-title">Iced Drinks</h2>
+        <div class="products-grid">
+          <!-- Iced Latte -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/95c237a80eb5a4.jpeg" alt="Iced Latte" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Iced Latte</h3>
+              <p class="product-price">$4.75</p>
+            </div>
+          </div>
+          
+          <!-- Iced Spanish Latte -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/571f8096aae881.jpeg" alt="Iced Spanish Latte" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Iced Spanish Latte</h3>
+              <p class="product-price">$5.50</p>
+            </div>
+          </div>
+          
+          <!-- Iced Americano -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/4debd2c251fe25.jpeg" alt="Iced Americano" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Iced Americano</h3>
+              <p class="product-price">$4.25</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Pastries Section -->
+      <section class="menu-section">
+        <h2 class="section-title">Pastries</h2>
+        <div class="products-grid">
+          <!-- Muffin -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/c7a43a8c4af612.jpeg" alt="Muffin" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Muffin</h3>
+              <p class="product-price">$3.25</p>
+            </div>
+          </div>
+          
+          <!-- Croissant -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/224420f6c8cda4.jpeg" alt="Croissant" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Croissant</h3>
+              <p class="product-price">$3.75</p>
+            </div>
+          </div>
+          
+          <!-- Chocolate Chip Cookie -->
+          <div class="product-card">
+            <img src="https://share1.cloudhq-mkt3.net/115db7a59e2071.jpeg" alt="Chocolate Chip Cookie" class="product-image">
+            <div class="product-info">
+              <h3 class="product-name">Chocolate Chip Cookie</h3>
+              <p class="product-price">$2.50</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!--Footer-->
+    <footer>© 2025 Zoha’s Cafe | All Rights Reserved</footer>
+  </body>
+</html>

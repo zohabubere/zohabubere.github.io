@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Home</title>
+    <link rel="icon" type="image/x-icon" href="https://share1.cloudhq-mkt3.net/184f05c3d2b4c7.png">
+    
+    <style>
+      body {
+        background-color: #341C02;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #ffffe7;
+      }
+      
+      /* Header */
+      header {
+        background-color: #553c2c;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+        
+      .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://share1.cloudhq-mkt3.net/d15aefb9373be4.jpeg');
+        background-size: cover;
+        background-position: center;
+        color: #FFFFE7;
+        text-align: center;
+        padding: 8rem 0;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+      
+      /* Main Content Layout */
+      .main-container {
+        display: flex;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+        
+      .content {
+        flex: 3;
+      }
+      
+      /* Aside */  
+      aside {
+        flex: 1;
+        background-color: #553c2c;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        height: fit-content;
+      }
+      
+      /* Section */
+      section {
+        margin-bottom: 2rem;
+        background-color: #553c2c;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+        
+      section h2 {
+        color: #ffffe7;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #553c2c;
+      }
+        
+      /* Article */
+      article {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+      }
+        
+      article:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+        
+      article h3 {
+        color: #553c2c;
+        margin-bottom: 0.5rem;
+      }
+      
+      /* Special Offers */
+      .offers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      
+      .offer-card {
+        background: #341C02;
+        color: #ffffe7;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+      }
+      
+      .offer-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+      
+      .offer-card .price {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+        
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .container {
+        position: relative;
+      }
+      
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: #ffffe7;
+        text-shadow: 2px 2px 8px #000;
+        font-family: Cambria;
+      }
+      
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: #553c2c;
+        padding: 16px;
+      }
+      
+      nav a {
+        font-family: Arial;
+        margin: 0 20px;
+        color: #ffffe7;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      nav a:hover {
+        font-family: Arial;
+        text-decoration: underline;
+      }
+      
+      h1 {
+        text-align: center;
+        font-family: Cambria;
+        font-size: 25px;
+        color: #ffffe7;
+      }
+      
+      h2 {
+        color: #ffffe7;
+        padding: 3px;
+        border-radius: 4px;
+        font-family: Cambria;
+        font-size: 22px;
+        text-align: center;
+      }
+      
+      h3 {
+        font-family: Arial;
+        color: #ffffe7;
+        text-align: left;
+      }
+      
+      p {
+        font-family: Arial;
+        text-align: center;
+        border: 5px;
+        font-size: 15px;
+        color: #ffffe7;
+        margin-left: 60px;
+        margin-right: 60px;
+        line-height: 1.5;
+      }
+      
+      ul {
+        font-family: Arial;
+        color: #ffffe7;
+      }
+      
+      footer {
+        font-family: Arial;
+        background-color: #553c2c;
+        color: #ffffe7;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .hero h2 {
+          font-size: 2.2rem;
+        }
+            
+        .main-container {
+          flex-direction: column;
+        }
+            
+        aside {
+          order: -1;
+        }
+      }
+        
+      @media (max-width: 768px) {
+        .header-container {
+          flex-wrap: wrap;
+        }
+            
+        .mobile-menu-btn {
+          display: block;
+        }
+            
+        .hero {
+          padding: 3rem 0;
+        }
+            
+        .hero h2 {
+          font-size: 1.8rem;
+        }
+            
+        .hero p {
+          font-size: 1rem;
+        }
+        
+        .main-container {
+          padding: 1rem;
+        }
+      }
+        
+      @media (max-width: 480px) {
+        .logo h1 {
+          font-size: 1.5rem;
+        }
+            
+        .hero h2 {
+          font-size: 1.5rem;
+        }
+            
+        section, aside {
+          padding: 1.5rem 1rem;
+        }
+            
+        .offers {
+          grid-template-columns: 1fr;
+        }
+            
+        .menu-table {
+          font-size: 0.9rem;
+        }
+            
+        .menu-table th, .menu-table td {
+          padding: 8px 10px;
+        }
+        
+        p {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!--Header-->
+    <header>
+      <div class="container header-container">
+        <h1>Zoha's Cafe</h1>
+      </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h2>Welcome to Zoha's Cafe</h2>
+        <p>Experience the perfect blend of premium coffee, cozy atmosphere, and exceptional service at our charming cafe.</p>
+      </div>
+    </section>
+    
+    <!--Navigation-->
+    <nav>
+      <a href="https://drive.google.com/uc?id=1MPemjtJWPJnY0Kx6AVSayLZWFF1PEYFP&amp;export=download">Home</a> 
+      <a href="https://drive.google.com/uc?id=1CpY8tjr0jMo9_f3cmV7DcmmAFX7LccD9&amp;export=download">Menu</a> 
+      <a href="https://drive.google.com/uc?id=1qPjzvVGDPZ1XFwjGATvBCIKaxTUJg9Ri&amp;export=download">Contact</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-container">
+      <div class="content">
+        <section>
+          <h1>About Us</h1>
+          <p>At our cafe, we believe coffee isn't just a beverage — it's an experience. From morning espresso to afternoon lattes, our menu brings comfort and quality together. We're all about serving warm drinks made with love, rich flavors, and a touch of craftsmanship.</p>
+        </section>
+        
+        <!-- Special Offers Section -->
+        <section>
+          <h1>Special Offers</h1>
+          <div class="offers">
+            <div class="offer-card">
+              <h2>Morning Bliss</h2>
+              <p>Any coffee + pastry</p>
+              <div class="price">$5.99</div>
+              <p>Valid until 11 AM</p>
+            </div>
+            <div class="offer-card">
+              <h2>Student Special</h2>
+              <p>Show your student ID for</p>
+              <div class="price">20% OFF</div>
+              <p>All day, every day</p>
+            </div>
+            
+            <div class="offer-card">
+              <h2>Loyalty Rewards</h2>
+              <p>Buy 3 drinks, get the 4th</p>
+              <div class="price">FREE</div>
+              <p>Join our loyalty program</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+      <!-- Sidebar -->
+      <aside>
+        <h3>Opening Hours</h3>
+        <ul style="list-style: none;text-align: left;">
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+            <strong>Monday - Friday:</strong> 
+            <br>7:00 AM - 9:00 PM
+          </li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+            <strong>Saturday:</strong> 
+            <br>8:00 AM - 10:00 PM
+          </li>
+          <li style="padding: 8px 0;">
+            <strong>Sunday:</strong> 
+            <br>8:00 AM - 9:00 PM
+          </li>
+        </ul>
+        
+        <h3 style="margin-top: 2rem;">Today's Special</h3>
+        <p style="margin: 8; font-style: italic; text-align: left;">Caramel Macchiato</p>
+        <p style="margin: 8; text-align: left;">Bright with notes of caramel and vanilla aromas. A perfect morning coffee.</p>
+        
+        <h3 style="margin-top: 2rem;">Events</h3>
+        <p style="margin: 8; text-align: left;">
+          <strong>Live Music:</strong> Fridays 8-10 PM
+        </p>
+        
+        <p style="margin: 8; text-align: left;">
+          <strong>Latte Art Workshop:</strong> November 2, 2-4 PM
+        </p>
+      </aside>
+    </div>
+    
+    <!--Footer-->
+    <footer>© 2025 Zoha’s Cafe | All Rights Reserved</footer>
+  </body>
+</html>
